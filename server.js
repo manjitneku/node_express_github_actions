@@ -11,12 +11,18 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 //http://localhost:3000/
 app.get('/', function (req, res) {
-    res.send("<h1>Home Page</h1>")
+  const htmlContent = `
+  <h1><a href='https://c0869661-node-app.azurewebsites.net/name'>Go To Name Page</a></h1>
+  <h1><a href='https://github.com/manjitneku/node_express_github_actions.git'>Go To Github Page</a></h1>
+  <h1><a href='https://c0869661-node-app.azurewebsites.net/admin'>Go To Admin Page</a></h1>
+  <h1><a href='https://c0869661-node-app.azurewebsites.net/user/109'>Go To User ID</a></h1>  
+`;
+res.send(htmlContent);
 })
 
 //http://localhost:3000/name
 app.get('/name', function (req, res) {
-  res.send("<h1>Manjit Neku</h1>")
+  res.send("<h1>C0869661 - Manjit Neku</h1>")
   
 })
 
